@@ -27,3 +27,12 @@ document.querySelector('#demo-search')?.addEventListener('submit', (event) => {
   empty.hidden = visible > 0;
   document.querySelector('#homes')?.scrollIntoView({ behavior: 'smooth' });
 });
+
+const contactModal = document.querySelector('#contact-modal');
+for (const selector of ['#show-contact', '#show-contact-bottom']) {
+  document.querySelector(selector)?.addEventListener('click', () => contactModal?.classList.add('active'));
+}
+document.querySelector('#close-modal')?.addEventListener('click', () => contactModal?.classList.remove('active'));
+contactModal?.addEventListener('click', event => {
+  if (event.target === contactModal) contactModal.classList.remove('active');
+});
