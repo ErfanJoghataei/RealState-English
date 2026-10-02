@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'IRANSansX';
+    src: url('../../Fonts/iranian_sans-webfont.woff2') format('woff2'),
+         url('../../Fonts/iranian_sans-webfont.woff') format('woff'),
+         url('../../Fonts/Iranian Sans.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Apply IRANSansX globally */
+html, body {
+    font-family: 'IRANSansX', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans',
+                 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+}
+
+/* Ensure all common text-bearing elements inherit the font */
+body, p, span, a, li, ul, ol, h1, h2, h3, h4, h5, h6,
+small, strong, em, label, legend, figcaption, blockquote, cite,
+table, th, td, caption, code, pre, kbd, samp,
+button, input, select, textarea {
+    font-family: inherit;
+}
+
+/* Form controls consistency + caret color fix */
+input, textarea, select, button {
+    font-family: inherit;
+    caret-color: #111; /* improve caret visibility on dark backgrounds */
+}
+
+/* Optional: better Persian/RTL numerals rendering if the font supports it */
+body {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+}

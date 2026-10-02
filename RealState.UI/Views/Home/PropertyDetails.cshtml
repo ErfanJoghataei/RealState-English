@@ -1,0 +1,171 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using RealState.Dal.Entities
+@model Properties
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Layout/HomeDetail.css"/>
+}
+
+@section Scripts {
+    <script src="~/js/HomeDetail.js"></script>
+}
+
+<div class="property-details-container">
+    @{
+        var buildYear = Model.DateOfBuild.Year;
+    }
+
+    <!-- ردیف اصلی با گالری و اطلاعات -->
+    <div class="property-main">
+        <div class="property-gallery">
+            <div class="gallery-main">
+                <img src="@Url.Content(Model.ImageUrlMain)" id="main-image" alt="@Model.Title" />
+            </div>
+
+            <div class="gallery-thumbs">
+                @if (!string.IsNullOrWhiteSpace(Model.ImageUrl1))
+                {
+                    <div class="gallery-thumb @(string.IsNullOrWhiteSpace(Model.ImageUrl1) ? "" : "active")" data-image="@Url.Content(Model.ImageUrl1)">
+                        <img src="@Url.Content(Model.ImageUrl1)" alt="" />
+                    </div>
+                }
+                @if (!string.IsNullOrWhiteSpace(Model.ImageUrl2))
+                {
+                    <div class="gallery-thumb" data-image="@Url.Content(Model.ImageUrl2)">
+                        <img src="@Url.Content(Model.ImageUrl2)" alt="" />
+                    </div>
+                }
+                @if (!string.IsNullOrWhiteSpace(Model.ImageUrl3))
+                {
+                    <div class="gallery-thumb" data-image="@Url.Content(Model.ImageUrl3)">
+                        <img src="@Url.Content(Model.ImageUrl3)" alt="" />
+                    </div>
+                }
+                @if (!string.IsNullOrWhiteSpace(Model.ImageUrl4))
+                {
+                    <div class="gallery-thumb" data-image="@Url.Content(Model.ImageUrl4)">
+                        <img src="@Url.Content(Model.ImageUrl4)" alt="" />
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="property-info">
+            <h1 class="property-title">@Model.Title</h1>
+            <div class="property-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>@Model.neighborhood, @Model.City, @Model.province</span>
+            </div>
+            <div class="property-price">@string.Format("{0:N0}", Model.Price) toman</div>
+
+            <div class="property-features">
+                <div class="feature">
+                    <i class="fas fa-bed"></i>
+                    <span>@Model.RoomCount bedrooms</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-bath"></i>
+                    <span>@Model.BathroomCount bathrooms</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-toilet"></i>
+                    <span>@Model.ToiletCount washrooms</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-ruler-combined"></i>
+                    <span>@Model.FloorArea m²</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Built @buildYear</span>
+                </div>
+            </div>
+
+            <div class="property-description">
+                <p>@Model.Description</p>
+            </div>
+
+            <button class="contact-btn" id="show-contact">
+                <i class="fas fa-phone"></i>
+                Show contact details
+            </button>
+        </div>
+    </div>
+
+    <!-- جزئیات کامل ملک -->
+    <div class="property-details">
+        <h2 class="details-title">Property details</h2>
+        <div class="details-grid">
+            <div class="detail-item">
+                <span class="detail-label">Property type</span>
+                <span class="detail-value">@Model.Category</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Reference</span>
+                <span class="detail-value">@Model.Code</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Area</span>
+                <span class="detail-value">@Model.FloorArea m²</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Year built</span>
+                <span class="detail-value">@buildYear</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Bedrooms</span>
+                <span class="detail-value">@Model.RoomCount</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Bathrooms</span>
+                <span class="detail-value">@Model.BathroomCount</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Parking</span>
+                <span class="detail-value">@(Model.Parking ? "Yes" : "No")</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Storage</span>
+                <span class="detail-value">@(Model.warehouse ? "Yes" : "No")</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Security</span>
+                <span class="detail-value">@Model.SecuritySystem</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Elevator</span>
+                <span class="detail-value">@(Model.Elevator? "Yes" : "No")</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Yard</span>
+                <span class="detail-value">@Model.YardArea m²</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- بخش تماس -->
+    <div class="contact-section">
+        <h2 class="contact-title">Interested in a viewing?</h2>
+        <button class="contact-btn" id="show-contact-bottom">
+            <i class="fas fa-phone"></i>
+            Show contact details
+        </button>
+    </div>
+
+    <!-- modal اطلاعات تماس -->
+    <div class="contact-modal" id="contact-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <h2 class="modal-title">Contact details</h2>
+            <p>Call us for more information or to arrange a viewing:</p>
+            <div class="phone-number">09123907459</div>
+            <a href="tel:09123907459" class="call-btn">
+                <i class="fas fa-phone"></i>
+                Call now
+            </a>
+        </div>
+    </div>
+</div>

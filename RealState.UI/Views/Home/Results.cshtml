@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Search results";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Search results</h2>
+<div class="filters">
+    <select><option>Sort: newest</option></select>
+    <select><option>Price</option></select>
+</div>
+
+<div class="results">
+    <div class="result-card">
+        <img src="/images/ap1.jpg" alt="">
+        <h3>80 m² apartment</h3>
+        <p>Price: 5 billion toman</p>
+        <a href="/Property/Details/1">Details</a>
+    </div>
+    <div class="result-card">
+        <img src="/images/ap2.jpg" alt="">
+        <h3>120 m² apartment</h3>
+        <p>Price: 7 billion toman</p>
+        <a href="/Property/Details/2">Details</a>
+    </div>
+</div>

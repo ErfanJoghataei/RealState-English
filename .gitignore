@@ -1,0 +1,29 @@
+# Visual Studio
+.vs/
+
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+
+# Rider
+.idea/
+
+# Logs
+*.log
+Logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local browser previews and captured screenshots
+.chrome-preview*/
+.edge-preview/
+/realstate-*.png
+
+# Local settings
+appsettings.Development.json

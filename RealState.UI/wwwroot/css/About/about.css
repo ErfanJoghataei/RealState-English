@@ -1,0 +1,191 @@
+﻿:root {
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --transition: .3s cubic-bezier(.4,0,.2,1);
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.about-header {
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+    color: #d4af37;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+    .about-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .about-header p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        color: #f0f0f0;
+    }
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.about-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid rgba(0,0,0,.04);
+}
+
+    .about-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    }
+
+    .about-card h2 {
+        color: var(--secondary);
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--accent);
+    }
+
+    .about-card p {
+        color: #555;
+        margin-bottom: 1rem;
+    }
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.feature-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.feature-icon {
+    background: linear-gradient(135deg, #333333 0%, #000000 100%);
+    color: #d4af37;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.feature-content h3 {
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+}
+
+.cta-section {
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+    color: #d4af37;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 10px;
+    margin: 3rem 0;
+    box-shadow: var(--shadow);
+}
+
+    .cta-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+.cta-button {
+    background: var(--accent);
+    color: #000000;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+}
+
+    .cta-button:hover {
+        background: #b8941f;
+        transform: translateY(-2px);
+    }
+
+@media (max-width: 768px) {
+    .about-container {
+        margin: 1rem auto;
+        padding: 0 1rem;
+    }
+
+    .about-header {
+        padding: 2rem 1rem;
+        border-radius: 8px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .about-header h1 {
+        font-size: 2rem;
+    }
+
+    .about-header p {
+        font-size: 1rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .feature-item {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-header {
+        padding: 1.5rem 0.75rem;
+    }
+
+    .about-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .about-card {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .feature-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
