@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@(ViewBag.Title ?? "Find your home") | RealState 200</title>
-    <meta name="description" content="Explore curated villas and apartments in Iran with RealState 200." />
+    <meta name="description" content="Explore curated villas and apartments across the United States with RealState 200." />
     <link rel="stylesheet" href="~/css/Layout/site.css" asp-append-version="true" />
     @await RenderSectionAsync("Styles", required: false)
     <link rel="stylesheet" href="~/css/Layout/english.css" asp-append-version="true" />
@@ -13,10 +13,10 @@
     <header class="en-header">
         <a href="/" class="en-brand"><span class="en-brand-mark">R<span>.</span></span><span>REALSTATE <small>200</small></span></a>
         <nav class="en-nav" aria-label="Main navigation"><a href="/">Homes</a><a href="/#homes">Collection</a><a href="@Url.Action("About", "About")">About</a><a href="@Url.Action("Servises", "Servises")">Services</a></nav>
-        <div class="en-nav-actions"><a href="mailto:info@amlak200.ir" class="en-contact-link">Get in touch ↗</a><button class="en-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button></div>
+        <div class="en-nav-actions"><a href="mailto:erfan.joghataei2020@gmail.com" class="en-contact-link">Get in touch ↗</a><button class="en-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button></div>
     </header>
     <main>@RenderBody()</main>
-    <footer class="en-footer"><div class="en-footer-top"><div><a href="/" class="en-footer-brand">REALSTATE 200<span>.</span></a><p>Considered spaces. Better living.</p></div><div><h3>Explore</h3><a href="/">Homes</a><a href="@Url.Action("About", "About")">About us</a><a href="@Url.Action("Servises", "Servises")">Services</a></div><div><h3>Contact</h3><a href="mailto:info@amlak200.ir">info@amlak200.ir</a><span>Golsar, Rasht, Iran</span></div></div><div class="en-footer-bottom"><span>© @DateTime.UtcNow.Year RealState 200</span><span>Find a place to belong.</span></div></footer>
+    <footer class="en-footer"><div class="en-footer-top"><div><a href="/" class="en-footer-brand">REALSTATE 200<span>.</span></a><p>Considered spaces. Better living.</p></div><div><h3>Explore</h3><a href="/">Homes</a><a href="@Url.Action("About", "About")">About us</a><a href="@Url.Action("Servises", "Servises")">Services</a></div><div><h3>Contact</h3><a href="mailto:erfan.joghataei2020@gmail.com">erfan.joghataei2020@gmail.com</a><span>Online portfolio showcase</span></div></div><div class="en-footer-bottom"><span>© @DateTime.UtcNow.Year RealState 200</span><span>Find a place to belong.</span></div></footer>
     <script src="~/js/english.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

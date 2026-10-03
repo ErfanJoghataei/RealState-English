@@ -121,9 +121,22 @@ builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
         db.Database.EnsureCreated();
         foreach (var listing in RealState.UI.Models.ShowcaseProperties.All)
         {
-            if (!db.properties.Any(p => p.Code == listing.Code))
+            var stored = db.properties.FirstOrDefault(p => p.Code == listing.Code);
+            if (stored == null)
             {
                 db.properties.Add(RealState.UI.Models.ShowcaseProperties.ToDatabaseCopy(listing));
+            }
+            else
+            {
+                stored.Title = listing.Title;
+                stored.Description = listing.Description;
+                stored.Price = listing.Price;
+                stored.FloorArea = listing.FloorArea;
+                stored.City = listing.City;
+                stored.province = listing.province;
+                stored.neighborhood = listing.neighborhood;
+                stored.YardArea = listing.YardArea;
+                stored.ImageUrlMain = listing.ImageUrlMain;
             }
         }
         db.SaveChanges();

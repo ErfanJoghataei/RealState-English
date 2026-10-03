@@ -10,7 +10,7 @@
     <div class="en-hero-copy">
         <span class="en-eyebrow">REAL ESTATE, REIMAGINED</span>
         <h1>Find a place <em>worth calling home.</em></h1>
-        <p>Explore considered homes across Iran, from coastal retreats to city residences. Discover a home that fits the way you live.</p>
+        <p>Explore considered homes across the United States, from coastal retreats to city residences. Discover a home that fits the way you live.</p>
         <a href="#homes" class="en-hero-link">Explore the collection →</a>
         <div class="en-hero-proof"><span>01 / 04</span><span>Curated homes. Clear details. A better search.</span></div>
     </div>
@@ -22,7 +22,7 @@
 <section class="en-search-wrap" aria-label="Search properties">
     <form asp-controller="Home" asp-action="Index" method="get" class="en-search">
         <label><span>KEYWORD</span><input type="search" name="query" value="@currentQuery" placeholder="City, neighborhood, or property" /></label>
-        <label><span>PROVINCE</span><input type="text" name="province" value="@currentProvince" placeholder="Any province" /></label>
+        <label><span>STATE</span><input type="text" name="province" value="@currentProvince" placeholder="Any state" /></label>
         <label><span>CITY</span><input type="text" name="city" value="@currentCity" placeholder="Any city" /></label>
         <button type="submit">⌕ Search homes</button>
     </form>
@@ -37,7 +37,7 @@
         {
             <a asp-controller="Home" asp-action="PropertyDetails" asp-route-id="@home.Id" class="en-property-card">
                 <div class="en-property-image"><img src="@home.ImageUrlMain" alt="@home.Title" loading="lazy" /><span class="en-property-tag">@home.Category</span></div>
-                <div class="en-property-copy"><div class="en-property-kicker">@home.City · @home.province</div><h3>@home.Title</h3><p>@home.neighborhood</p><div class="en-property-foot"><span>@home.RoomCount beds</span><span>@home.FloorArea m²</span></div><div class="en-property-price">@string.Format("{0:N0}", home.Price) <small>toman</small><span class="en-card-arrow">↗</span></div></div>
+                <div class="en-property-copy"><div class="en-property-kicker">@home.City · @home.province</div><h3>@home.Title</h3><p>@home.neighborhood</p><div class="en-property-foot"><span>@home.RoomCount beds</span><span>@home.FloorArea.ToString("N0") sq ft</span></div><div class="en-property-price">$@string.Format("{0:N0}", home.Price) <small>USD</small><span class="en-card-arrow">↗</span></div></div>
             </a>
         }
     }
@@ -48,4 +48,4 @@
     </div>
 </section>
 
-<section class="en-endcap"><span class="en-eyebrow">A BETTER WAY TO FIND HOME</span><h2>Your next chapter starts here.</h2><p>Browse the collection, compare the details, and reach out when a place feels right.</p><a href="mailto:info@amlak200.ir">Talk to our team →</a></section>
+<section class="en-endcap"><span class="en-eyebrow">A BETTER WAY TO FIND HOME</span><h2>Your next chapter starts here.</h2><p>Browse the collection, compare the details, and reach out when a place feels right.</p><a href="mailto:erfan.joghataei2020@gmail.com">Talk to our team →</a></section>

@@ -59,7 +59,7 @@
                 <i class="fas fa-map-marker-alt"></i>
                 <span>@Model.neighborhood, @Model.City, @Model.province</span>
             </div>
-            <div class="property-price">@string.Format("{0:N0}", Model.Price) toman</div>
+            <div class="property-price">$@string.Format("{0:N0}", Model.Price) USD</div>
 
             <div class="property-features">
                 <div class="feature">
@@ -76,7 +76,7 @@
                 </div>
                 <div class="feature">
                     <i class="fas fa-ruler-combined"></i>
-                    <span>@Model.FloorArea m²</span>
+                    <span>@Model.FloorArea.ToString("N0") sq ft</span>
                 </div>
                 <div class="feature">
                     <i class="fas fa-calendar-alt"></i>
@@ -109,7 +109,7 @@
             </div>
             <div class="detail-item">
                 <span class="detail-label">Area</span>
-                <span class="detail-value">@Model.FloorArea m²</span>
+                <span class="detail-value">@Model.FloorArea.ToString("N0") sq ft</span>
             </div>
             <div class="detail-item">
                 <span class="detail-label">Year built</span>
@@ -141,7 +141,7 @@
             </div>
             <div class="detail-item">
                 <span class="detail-label">Yard</span>
-                <span class="detail-value">@Model.YardArea m²</span>
+                <span class="detail-value">@Model.YardArea sq ft</span>
             </div>
         </div>
     </div>

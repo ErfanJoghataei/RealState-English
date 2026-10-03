@@ -4,6 +4,8 @@ This is an independent English copy of the RealState project. It includes a new 
 
 The `docs/` directory is a static portfolio preview for GitHub Pages. It shows the four example properties and client-side search; the ASP.NET application is the full local version.
 
+The English portfolio uses illustrative US locations and USD prices. Listings and prices are sample content, not live offers.
+
 ## Run locally
 
 Requires .NET 10 and SQL Server LocalDB. From this folder:
